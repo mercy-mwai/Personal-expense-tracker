@@ -17,6 +17,6 @@ $conn=new mysqli($db_server,
 }
 
 if($conn){
-    echo "Your connection is valid";
+    echo "Your connection is valid <br />";
 }
 ?>
