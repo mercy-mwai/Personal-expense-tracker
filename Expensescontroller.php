@@ -11,12 +11,22 @@ $description =filter_input(INPUT_POST, "description", FILTER_SANITIZE_FULL_SPECI
 
 if($amount !== false && $categoryId !==false && !empty($date)){
     echo "Valid Input";
+
+    $expense = new Expense();
+    $result = $expense->save($amount, $categoryId, $date, $description);
+
+     if ($result === true) {
+            echo "Expense saved successfully.";
+        } else {
+            echo $result; 
+        }
+
 }else{
     echo "Invalid Input . Please check your data";
 }
 
 }
-$expense = new Expense();
-$result = $expense->save($amount, $categoryId, $date, $description);
+
+
 
 ?>
