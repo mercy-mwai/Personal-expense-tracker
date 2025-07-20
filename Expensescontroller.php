@@ -1,5 +1,5 @@
 <?php
-include "database.php";
+require_once "expense.php";
 if(isset($_POST["add-expense"])){
 
 $amount = filter_input(INPUT_POST, "amount",FILTER_VALIDATE_FLOAT );
@@ -16,4 +16,7 @@ if($amount !== false && $categoryId !==false && !empty($date)){
 }
 
 }
+$expense = new Expense();
+$result = $expense->save($amount, $categoryId, $date, $description);
+
 ?>
