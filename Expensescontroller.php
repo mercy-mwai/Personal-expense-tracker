@@ -27,6 +27,12 @@ if($amount !== false && $categoryId !==false && !empty($date)){
 
 }
 
+$expense = new Expense();
+$allExpenses = $expense->getAll();
+
+foreach ($allExpenses as $item) {
+    echo $item['amount'] . " - " . $item['category_id'] . "<br>";
+}
 
 
 ?>
