@@ -1,5 +1,5 @@
 <?php
-require_once "expense.php";
+require_once "Expense.php";
 if(isset($_POST["add-expense"])){
 
 $amount = filter_input(INPUT_POST, "amount",FILTER_VALIDATE_FLOAT );
@@ -27,12 +27,7 @@ if($amount !== false && $categoryId !==false && !empty($date)){
 
 }
 
-$expense = new Expense();
-$allExpenses = $expense->getAll();
 
-foreach ($allExpenses as $item) {
-    echo $item['amount'] . " - " . $item['category_id'] . "<br>";
-}
 
 
 ?>
