@@ -18,11 +18,11 @@ if($amount !== false && $categoryId !==false && !empty($date)){
      if ($result === true) {
             echo "Expense saved successfully.";
         } else {
-            echo $result; 
+            echo "<p> $result</p>"; 
         }
 
 }else{
-    echo "Invalid Input . Please check your data";
+    echo "<p>Invalid Input . Please check your data</p>";
 }
 
 }
