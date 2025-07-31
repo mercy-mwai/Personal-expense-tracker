@@ -1,4 +1,4 @@
-
+<?php require_once "ExpenseController.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
