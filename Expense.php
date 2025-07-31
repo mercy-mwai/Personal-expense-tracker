@@ -67,15 +67,15 @@ public function update($id,$amount, $categoryid,$date,$description){
 public function delete($id){
 global $conn;
 
-$sql = "DELETE FROM expensesdb WHERE id =?";
+$sql = "DELETE FROM expenses WHERE id =?";
 $stmt= $conn->prepare($sql);
-$stmt= bind_param("i", $id);
+$stmt->bind_param("i", $id);
 return $stmt->execute();
-
 }
+
 public function getById($id){
     global $conn;
-    $sql= "SELECT * from expensesdb WHERE id= ?";
+    $sql= "SELECT * from expensesdb WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt =bind_param("s", $id);
 

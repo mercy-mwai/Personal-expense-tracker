@@ -34,6 +34,4 @@ if($amount !== false && $categoryId !==false && !empty($date)){
 
 }
 
-
-
 ?>
