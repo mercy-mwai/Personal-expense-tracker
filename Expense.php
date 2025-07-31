@@ -73,7 +73,7 @@ $stmt= bind_param("i", $id);
 return $stmt->execute();
 
 }
-public function getId($id){
+public function getById($id){
     global $conn;
     $sql= "SELECT * from expensesdb WHERE id= ?";
     $stmt = $conn->prepare($sql);
