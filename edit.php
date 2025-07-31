@@ -10,7 +10,7 @@ if(!isset($_GET['id'])){
 
 $id= $_GET['id'];
 
-$expensedata=expense->getById($id);
+$expensedata=$expense->getById($id);
 
 if(!$expense){
 echo "expense not found";
