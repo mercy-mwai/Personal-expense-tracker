@@ -64,5 +64,14 @@ public function update($id,$amount, $categoryid,$date,$description){
     }
 }
 
+public function delete($id){
+global $conn;
+
+$sql = "DELETE FROM expensesdb WHERE id =?";
+$stmt= $conn->prepare($sql);
+$stmt= bind_param("i", $id);
+return $stmt->execute();
+
+}
 }
 ?>
