@@ -73,5 +73,16 @@ $stmt= bind_param("i", $id);
 return $stmt->execute();
 
 }
+public function getId($id){
+    global $conn;
+    $sql= "SELECT * from expensesdb WHERE id= ?";
+    $stmt = $conn->prepare($sql);
+    $stmt =bind_param("s", $id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    return $result->fetch_assoc();
+}
 }
 ?>
