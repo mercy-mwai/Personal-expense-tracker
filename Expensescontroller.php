@@ -24,9 +24,15 @@ if($amount !== false && $categoryId !==false && !empty($date)){
 }else{
     echo "<p>Invalid Input . Please check your data</p>";
 }
+ //delete
+
+ if(isset($_GET['delete'])){
+    $expense->delete($_GET['delete']);
+
+    echo "<p>Expense deleted</p>";
+ }
 
 }
-
 
 
 
