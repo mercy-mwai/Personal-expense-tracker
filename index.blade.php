@@ -19,8 +19,9 @@
     </style>
 </head>
 <body>
-    <form action="Expensescontroller.php" method="POST">
-    <input type="text" name="amount" placeholder="Amount" required />
+    <h2>Add Expense</h2>
+    <form action="" method="POST">
+  Amount: <input type="text" name="amount" required />
     <br />
     <select name="category_id" required>
        <option value="1">Rent</option>
@@ -28,11 +29,33 @@
        <option value="3">Food</option>
     </select>
     <br />
-    <input type="text" name="description" placeholder="Description" />
+   Description: <input type="text" name="description"  />
     <br />
     <input type="date" name="date" required />
     <br />
     <button type="submit" name="add-expense">Add Expense</button>
     </form>
+
+    <h2>All Expenses</h2>
+    <?php
+        $allExpenses = $expense->getAll();
+
+        echo "<table border='1' cellpadding='10'>";
+echo "<tr>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>";
+
+    foreach ($allExpenses as $item) {
+    echo "<tr>";
+    echo "<td>" . $item['amount'] . "</td>";
+    echo "<td>" . $item['category_id'] . "</td>"; 
+    echo "<td>" . $item['date'] . "</td>";
+    echo "<td>" . $item['description'] . "</td>";
+    echo "</tr>";
+    }
+    ?>
 </body>
 </html>
