@@ -1,4 +1,4 @@
-<?php require_once "ExpenseController.php" ?>
+<?php require_once "ExpensesController.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +38,7 @@
 
     <h2>All Expenses</h2>
     <?php
+        $expense =new Expense();
         $allExpenses = $expense->getAll();
 
         echo "<table border='1' cellpadding='10'>";
