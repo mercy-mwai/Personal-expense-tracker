@@ -42,5 +42,27 @@ public function getAll(){
     }
 }
 
+public function update($id,$amount, $categoryid,$date,$description){
+    global $conn;
+
+    $sql= "UPDATE expensedb 
+        SET amount=?, category_id=? ,date=? ,description=? 
+        WHERE id=? ";
+
+    $stmt =$conn->prepare(sql);
+
+    if(!$stmt){
+        return false;
+    }
+
+    $stmt->bind_param("disss", $amout, $category_id , $date, $description, $id);
+
+    if($stmt->execute()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 }
 ?>
