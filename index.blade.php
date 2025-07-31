@@ -55,10 +55,8 @@ echo "<tr>
     echo "<td>" . $item['category_id'] . "</td>"; 
     echo "<td>" . $item['date'] . "</td>";
     echo "<td>" . $item['description'] . "</td>";
-    echo "<td>
-        a href='edit.php?id={$item['id']}'>✏️ Edit</a> |
-            <a href='?delete={$item['id']}' onclick='return confirm(\"Delete this expense?\")'>🗑️ Delete</a>
-        </td>";
+    echo "<td> a href='edit.php?id={$item['id']}'>✏️ Edit</a> </td>"
+     echo "<td><a href='delete.php?id=" . $item['id'] . "' onclick='return confirm(\"Are you sure?\")'>🗑️ Delete</a></td>";
     echo "</tr>";
     }
     ?>
