@@ -45,7 +45,7 @@ public function getAll(){
 public function update($id,$amount, $categoryid,$date,$description){
     global $conn;
 
-    $sql= "UPDATE expensedb 
+    $sql= "UPDATE expenses
         SET amount=?, category_id=? ,date=? ,description=? 
         WHERE id=? ";
 
