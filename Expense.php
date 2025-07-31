@@ -69,8 +69,16 @@ global $conn;
 
 $sql = "DELETE FROM expenses WHERE id =?";
 $stmt= $conn->prepare($sql);
+    if(!$stmt){
+        return $conn->error;
+    }
+
 $stmt->bind_param("i", $id);
-return $stmt->execute();
+    if($stmt->execute()){
+        return true;
+    }else{
+        return $stmt->error;
+    }
 }
 
 public function getById($id){
